@@ -80,135 +80,29 @@
 	"buffers":
 	[
 		{
-			"file": "Application/Pages/SettingsPage.py",
-			"settings":
-			{
-				"buffer_size": 10544,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Application/Pages/GraphPage.py",
-			"settings":
-			{
-				"buffer_size": 6810,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Application/config.json",
-			"settings":
-			{
-				"buffer_size": 372,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Application/defaultConfig.json",
-			"settings":
-			{
-				"buffer_size": 262,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Application/Root.py",
-			"settings":
-			{
-				"buffer_size": 3360,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Application/Utilities/BGLogger.py",
-			"settings":
-			{
-				"buffer_size": 2864,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Application/Utilities/Graph.py",
-			"settings":
-			{
-				"buffer_size": 2377,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": ".gitignore",
 			"settings":
 			{
-				"buffer_size": 226,
+				"buffer_size": 1724,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "import tkinter as tk\nfrom Utilities import BGLogger, Graph\nfrom matplotlib.backends.backend_tkagg import FigureCanvasTkAgg\nimport os\n\nclass GraphPage(tk.Frame):\n\n    def __init__(self, master, controller):\n\n        tk.Frame.__init__(self, master)\n\n        self.controller = controller\n        self.Logger = BGLogger.KeyboardLogger()\n        self.Grapher = Graph.BarGraph()\n\n        self.createWidgets()\n\n    def setLists(self):\n        \"\"\"\n        Set black and white-list of keyboardlogger\n        \"\"\"\n\n        # Set blackList, if empty, set instead whiteList\n        blackList, whiteList = self.controller.readSettings(\"blackList\", \"whiteList\").values()\n        if blackList:\n            self.Logger.setBlackList(blackList)\n        elif whiteList:\n            self.Logger.setWhiteList(whiteList)\n\n\n    def createWidgets(self):\n\n        self.setLists()\n\n        self.rowconfigure((0,1,2), weight=1)\n        self.columnconfigure(1, weight=1)\n\n        def saveImg():\n\n            fTypes, dpi = self.controller.readSettings(\"imageFormats\", \"imageDPI\").values()\n\n\n            \"\"\"\n            I know the following line isnt very practical\n            but hey, who doesn't like a one-liner\n            \"\"\"\n            fileTypeList = tuple(map(lambda f, t : tuple((s+t) for s in f), [(\"\", \"*.\")]*len(fTypes), fTypes))\n\n            location = tk.filedialog.asksaveasfilename(\n                initialdir=self.controller.destinationDir,\n                title=\"save image\",\n                defaultextension=\"png\",\n                filetypes=fileTypeList)\n\n            name, ext = os.path.splitext(location)\n            if location:\n                self.Grapher.saveImg(location, format=ext.replace(\".\", \"\"), dpi=dpi)\n\n\n        self.keyLogButton = tk.Button(self,\n            text=\"Start logging\", \n            background=\"green2\",\n            activebackground=\"green2\",\n            command=lambda : self.setToggleState(self.Logger.toggle()))\n        self.graphButton = tk.Button(self,\n            text=\"Update Graph\",\n            background=\"yellow2\",\n            activebackground=\"yellow2\",\n            command=self.plotData)\n        self.saveImgButton = tk.Button(self,\n            text=\"Save Image\",\n            background=\"royalblue1\",\n            activebackground=\"royalblue1\",  \n            command=saveImg)\n\n        self.graphCanvas = FigureCanvasTkAgg(self.Grapher.figSetup(\n            title=\"Letter Frequency\",\n            xlabel=\"Character\",\n            ylabel=\"Percentage (%)\",\n            size=(10, 6)), master= self)\n        \n\n        self.keyLogButton.grid(row=0, column=0, sticky=\"NSEW\")\n        self.graphButton.grid(row=1, column=0 ,sticky=\"NSEW\")\n        self.saveImgButton.grid(row=2, column=0, sticky=\"NSEW\")\n\n        self.graphCanvas.get_tk_widget().grid(\n           row=0, rowspan=3, column=1, sticky=\"NSEW\")\n\n\n    def setToggleState(self, default=None):\n\n        toggleBool = default or self.Logger.logging\n\n        if toggleBool:\n\n            self.keyLogButton.config(\n                text=\"Stop logging\",\n                relief=\"raised\",\n                background=\"red2\",\n                activebackground=\"red2\")\n\n            self.after(100, self.setToggleState)\n        else:\n\n            self.setLists()\n\n            self.keyLogButton.config(\n                text=\"Start logging\",\n                relief=\"raised\",\n                background=\"green2\",\n                activebackground=\"green2\")\n\n\n    def plotData(self, event=None):\n\n        self.Grapher.loadData(self.Logger.keyDict, mode=\"percent\")\n        self.Grapher.plotData()\n        self.graphCanvas.draw()\n\n\n    def menuBar(self, root):\n\n        def newLOG():\n\n            self.Logger.flush()\n            self.plotData()\n\n        def readLOGFile(self, path):\n\n            try:\n                with open(path, mode=\"r\") as file:\n                    newDict = {}\n                    for line in file.readlines():\n                        line = line.replace(\"'\", \"\")\n                        key, value = line.split(\":\")\n                        newDict[key.strip()] = int(value.strip())\n                    return newDict\n\n            except IOError:\n                print(\"{} not found\".format(path))\n\n\n        def writeLOGFile(self, path, dataDict):\n\n            try:\n                with open(path, mode=\"w\") as file:\n                    for key in dataDict:\n                        file.write(\"{}:{}\\n\".format(key, dataDict[key]))\n\n            except:\n                print(\"Unable to open file\")\n\n\n        def loadLOGFile(self, replace=True):\n\n            if self.Logger.logging:\n                self.Logger.keyLogToggle()\n\n            filePath = tk.filedialog.askopenfilename(\n                initialdir=self.controller.destinationDir,\n                title=\"Select file\",\n                filetypes=((\"log files\", \"*.LOG\"),))\n\n            self.Logger.keyDict = self.readLOGFile(filePath)\n\n\n        def saveNewLOGFile(self):\n\n            if self.Logger.logging:\n                self.keyLogToggle()\n\n            filePath = tk.filedialog.asksaveasfilename(\n                initialdir=self.controller.destinationDir,\n                defaultextension=\".dat\",\n                title=\"Create file\",\n                filetypes=((\"log file\", \"*.LOG\"),))\n\n            self.writeLOGFile(filePath, self.Logger.keyDict)\n\n\n        def saveToLOGFile(self):\n\n            if self.Logger.logging:\n                self.keyLogToggle()\n\n            filePath = tk.filedialog.askopenfilename(\n                initialdir=self.controller.destinationDir, \n                title=\"Select file\", \n                filetypes=((\"log file\", \"*.LOG\"),))\n\n            oldData = self.readLOGFile(filePath)\n            newData = self.Logger.keyDict\n\n            for key in oldData:\n                if key in newData:\n                    newData[key] += oldData[key]\n                else:\n                    newData[key] = oldData[key]\n\n            self.writeLOGFile(filePath, self.Logger.keyDict)\n\n        menu = tk.Menu(root)\n\n        filemenu = tk.Menu(menu, tearoff=0)\n        filemenu.add_command(label=\"New Log\", command=newLOG)\n        filemenu.add_command(label=\"Open Log\", command=loadLOGFile)\n        filemenu.add_command(label=\"Save As\", command=saveNewLOGFile)\n        filemenu.add_command(label=\"Save To\", command=saveToLOGFile)\n\n        filemenu.add_separator()\n        filemenu.add_command(label=\"Exit\", command=self.controller.destroy)\n        menu.add_cascade(label=\"File\", menu=filemenu)\n\n        helpmenu = tk.Menu(menu, tearoff=0)\n        helpmenu.add_command(label=\"About\")\n        menu.add_cascade(label=\"Help\", menu=helpmenu)\n\n        menu.add_command(label=\"Settings\",\n            command=lambda : self.controller.showFrame(\"SettingsPage\"))\n        menu.add_command(label=\"Exit\", \n            command=self.controller.destroy)\n\n        return menu\n",
+			"file": "Application/Pages/GraphPage.py",
+			"file_size": 7034,
+			"file_write_time": 132319775872317926,
+			"settings":
+			{
+				"buffer_size": 6810,
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "['A', 'D', 'F', 'A', 'S', 'D', 'F']\n['A', 'S', 'D', 'F']\n[]\n['A']\n['A', 'S']\n['S']\n['S', 'A']\n['S']\n['S', 'A']\n['S']\n['S', 'A']\n['S']\n['S', 'A']\n['S']\n[]\n['A', 'S', 'D']\n[]\n",
-			"settings":
-			{
-				"buffer_size": 173,
-				"line_ending": "Windows",
-				"name": "Build output",
-				"scratch": true
-			}
-		},
-		{
-			"contents": "",
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Windows",
-				"name": "Build output",
-				"scratch": true
-			}
-		},
-		{
-			"contents": "Logging Started\n['A', 'D', 'F', 'A', 'S', 'D', 'F'] []\n['A', 'D', 'F', 'A', 'S', 'D', 'F'] []\n['A', 'D', 'F', 'A', 'S', 'D', 'F'] []\nLogging Stopped\nLogging Started\n['A', 'D', 'F', 'A', 'S', 'D', 'F'] []\nU\n['A', 'D', 'F', 'A', 'S', 'D', 'F'] []\nU\nLogging Stopped\n",
-			"settings":
-			{
-				"buffer_size": 263,
-				"line_ending": "Windows",
-				"name": "Build output",
-				"scratch": true
 			}
 		}
 	],
-	"build_system": "Anaconda Python Builder",
+	"build_system": "",
 	"build_system_choices":
 	[
-		[
-			[
-				[
-					"Anaconda Python Builder",
-					""
-				],
-				[
-					"Packages/Python/Python.sublime-build",
-					""
-				],
-				[
-					"Packages/Python/Python.sublime-build",
-					"Syntax Check"
-				],
-				[
-					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
-					""
-				],
-				[
-					"Packages/User/python3.sublime-build",
-					""
-				]
-			],
-			[
-				"Anaconda Python Builder",
-				""
-			]
-		]
 	],
 	"build_varint": "",
 	"command_palette":
@@ -275,11 +169,11 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/forss/Documents/Python/Logger",
-		"/C/Users/forss/Documents/Python/Logger/Application"
+		"/C/Users/forss/Documents/Python/KeyLogger"
 	],
 	"file_history":
 	[
+		"/C/Users/forss/Documents/Python/KeyLogger/test.py",
 		"/C/Users/forss/Documents/Python/KeyLogger/KeyLogger/.git/MERGE_MSG",
 		"/C/Users/forss/Documents/Python/Logger/.git/MERGE_MSG",
 		"/C/Users/forss/Documents/Python/Logger/test1.py",
@@ -353,7 +247,7 @@
 	],
 	"find":
 	{
-		"height": 39.0
+		"height": 25.0
 	},
 	"find_in_files":
 	{
@@ -367,7 +261,6 @@
 		"case_sensitive": true,
 		"find_history":
 		[
-			"print"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -390,197 +283,11 @@
 			[
 				{
 					"buffer": 0,
-					"file": "Application/Pages/SettingsPage.py",
+					"file": ".gitignore",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10544,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6621,
-								6621
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2896.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "Application/Pages/GraphPage.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6810,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								402,
-								402
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "Application/config.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 372,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1,
-								1
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "Application/defaultConfig.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 262,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								197,
-								197
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 2,
-			"sheets":
-			[
-				{
-					"buffer": 4,
-					"file": "Application/Root.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3360,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								255,
-								255
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "Application/Utilities/BGLogger.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2864,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								713,
-								713
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 336.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "Application/Utilities/Graph.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2377,
+						"buffer_size": 1724,
 						"regions":
 						{
 						},
@@ -589,36 +296,6 @@
 							[
 								0,
 								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 336.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": ".gitignore",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 226,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								50,
-								50
 							]
 						],
 						"settings":
@@ -629,7 +306,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -639,39 +316,12 @@
 			"sheets":
 			[
 				{
-					"buffer": 8,
-					"semi_transient": false,
+					"buffer": 1,
+					"file": "Application/Pages/GraphPage.py",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 173,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								173,
-								173
-							]
-						],
-						"settings":
-						{
-							"default_dir": "C:\\Users\\forss\\Documents\\Python\\Logger\\Application",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 0,
+						"buffer_size": 6810,
 						"regions":
 						{
 						},
@@ -684,50 +334,28 @@
 						],
 						"settings":
 						{
-							"default_dir": "C:\\Users\\forss\\Documents\\Python\\Logger\\Application",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 263,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								263,
-								263
-							]
-						],
-						"settings":
-						{
-							"default_dir": "C:\\Users\\forss\\Documents\\Python\\Logger\\Application",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
+					"stack_index": 1,
 					"type": "text"
 				}
+			]
+		},
+		{
+			"sheets":
+			[
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 34.0
+		"height": 25.0
 	},
 	"input":
 	{
@@ -759,7 +387,7 @@
 		"cols":
 		[
 			0.0,
-			0.592128279884,
+			0.713411078717,
 			1.0
 		],
 		"rows":
@@ -770,10 +398,6 @@
 		]
 	},
 	"menu_visible": true,
-	"output.exec":
-	{
-		"height": 114.0
-	},
 	"output.find_results":
 	{
 		"height": 0.0
@@ -782,7 +406,7 @@
 	"project": "Sublime.sublime-project",
 	"replace":
 	{
-		"height": 64.0
+		"height": 46.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -812,7 +436,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},
