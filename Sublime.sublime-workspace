@@ -1,0 +1,828 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Not",
+				"NotImplementedError\tclass"
+			],
+			[
+				"as",
+				"ascii_uppercase\tstatement"
+			],
+			[
+				"addTo",
+				"addToBlackList"
+			],
+			[
+				"file",
+				"file\tstatement"
+			],
+			[
+				"write",
+				"writeDatFile"
+			],
+			[
+				"save",
+				"saveNewFile"
+			],
+			[
+				"y",
+				"yTicksDefault\tstatement"
+			],
+			[
+				"de",
+				"defaultTicks\tstatement"
+			],
+			[
+				"time",
+				"timePerCat\tstatement"
+			],
+			[
+				"timePer",
+				"timePerCatList\tstatement"
+			],
+			[
+				"key",
+				"keyDict\tstatement"
+			],
+			[
+				"bo",
+				"BOTH\tstatement"
+			],
+			[
+				"keyLog",
+				"keyLogToggle"
+			],
+			[
+				"Keyboard",
+				"KeyboardLogger\tclass"
+			],
+			[
+				"keyboard",
+				"KeyboardLogger\tclass"
+			],
+			[
+				"keybo",
+				"KeyboardLogger\tclass"
+			],
+			[
+				"stop",
+				"stopLog\tstatement"
+			],
+			[
+				"keyb",
+				"keyboardLogger\tclass"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Application/Pages/SettingsPage.py",
+			"settings":
+			{
+				"buffer_size": 10544,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Application/Pages/GraphPage.py",
+			"settings":
+			{
+				"buffer_size": 6810,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Application/config.json",
+			"settings":
+			{
+				"buffer_size": 372,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Application/defaultConfig.json",
+			"settings":
+			{
+				"buffer_size": 262,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Application/Root.py",
+			"settings":
+			{
+				"buffer_size": 3360,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Application/Utilities/BGLogger.py",
+			"settings":
+			{
+				"buffer_size": 2864,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Application/Utilities/Graph.py",
+			"settings":
+			{
+				"buffer_size": 2377,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": ".gitignore",
+			"settings":
+			{
+				"buffer_size": 226,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "['A', 'D', 'F', 'A', 'S', 'D', 'F']\n['A', 'S', 'D', 'F']\n[]\n['A']\n['A', 'S']\n['S']\n['S', 'A']\n['S']\n['S', 'A']\n['S']\n['S', 'A']\n['S']\n['S', 'A']\n['S']\n[]\n['A', 'S', 'D']\n[]\n",
+			"settings":
+			{
+				"buffer_size": 173,
+				"line_ending": "Windows",
+				"name": "Build output",
+				"scratch": true
+			}
+		},
+		{
+			"contents": "",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows",
+				"name": "Build output",
+				"scratch": true
+			}
+		},
+		{
+			"contents": "Logging Started\n['A', 'D', 'F', 'A', 'S', 'D', 'F'] []\n['A', 'D', 'F', 'A', 'S', 'D', 'F'] []\n['A', 'D', 'F', 'A', 'S', 'D', 'F'] []\nLogging Stopped\nLogging Started\n['A', 'D', 'F', 'A', 'S', 'D', 'F'] []\nU\n['A', 'D', 'F', 'A', 'S', 'D', 'F'] []\nU\nLogging Stopped\n",
+			"settings":
+			{
+				"buffer_size": 263,
+				"line_ending": "Windows",
+				"name": "Build output",
+				"scratch": true
+			}
+		}
+	],
+	"build_system": "Anaconda Python Builder",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Anaconda Python Builder",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				],
+				[
+					"Packages/User/python3.sublime-build",
+					""
+				]
+			],
+			[
+				"Anaconda Python Builder",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"package in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"sublime",
+				"SublimeREPL: Python"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"package ",
+				"Package Control: Install Package"
+			],
+			[
+				"th",
+				"UI: Select Theme"
+			],
+			[
+				"package control in",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 157.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/forss/Documents/Python/Logger",
+		"/C/Users/forss/Documents/Python/Logger/Application"
+	],
+	"file_history":
+	[
+		"/C/Users/forss/Documents/Python/KeyLogger/KeyLogger/.git/MERGE_MSG",
+		"/C/Users/forss/Documents/Python/Logger/.git/MERGE_MSG",
+		"/C/Users/forss/Documents/Python/Logger/test1.py",
+		"/C/Users/forss/Documents/Python/Logger/.gitignore",
+		"/C/Users/forss/Documents/Python/Logger/test 2.py",
+		"/C/Users/forss/Documents/Python/AI  Harvard/Lecture 0/src0/maze.py",
+		"/C/Users/forss/Documents/Python/Logger/Utilities/Graph.py",
+		"/C/Users/forss/Documents/Python/Logger/Utilities/BGLogger.py",
+		"/C/Users/forss/Documents/Python/Logger/defaultConfig.json",
+		"/C/Users/forss/Documents/Python/Logger/Pages/GraphPage.py",
+		"/C/Users/forss/Documents/Python/Logger/Pages/SettingsPage.py",
+		"/C/Users/forss/Documents/Python/Logger/config.json",
+		"/C/Users/forss/Documents/Python/Logger/Root.py",
+		"/C/Users/forss/Documents/Python/Logger/Application/Utilities/BGLogger.py",
+		"/C/Users/forss/Documents/Python/Logger/Application/Utilities/Graph.py",
+		"/C/Users/forss/Documents/Python/Logger/Application/Root.py",
+		"/C/Users/forss/Documents/Python/Logger/Application/defaultConfig.json",
+		"/C/Users/forss/Documents/Python/Logger/Application/config.json",
+		"/C/Users/forss/Documents/Python/Logger/Application/Pages/GraphPage.py",
+		"/C/Users/forss/Documents/Python/Logger/Application/Pages/SettingsPage.py",
+		"/C/Users/forss/Documents/Python/Logger/Application/sdfgsdfg.pdf",
+		"/C/Users/forss/Documents/Python/Logger/Application/config backup.json",
+		"/C/Users/forss/Documents/Python/Logger/test.py",
+		"/C/Users/forss/Documents/Python/Logger/Graph.py",
+		"/C/Users/forss/Documents/Python/Logger/Application.py",
+		"/C/Users/forss/Documents/Python/Logger/application_config.json",
+		"/C/Users/forss/Documents/Python/Logger/BGLogger.py",
+		"/C/Users/forss/AppData/Local/Programs/Python/Python37-32/lib/tkinter/__init__.py",
+		"/C/Users/forss/Documents/Command Scripts/audio_tag_editor.py",
+		"/C/Users/forss/Documents/Python/Olympiad.py",
+		"/C/Users/forss/Documents/Python/Logger/Test 1.dat",
+		"/C/Users/forss/Documents/Python/hje.txt",
+		"/C/Users/forss/Documents/Python/test_2.py",
+		"/C/Users/forss/Documents/Python/hej.espace",
+		"/C/Users/forss/Documents/Python/Logger/Class Caller Test.py",
+		"/C/Users/forss/AppData/Roaming/Sublime Text 3/Packages/User/python3.sublime-build",
+		"/C/Users/forss/AppData/Local/Programs/Python/Python37-32/lib/site-packages/matplotlib/pyplot.py",
+		"/C/Users/forss/AppData/Roaming/Sublime Text 3/Packages/User/newPython3.75Build.sublime_build.sublime-build",
+		"/C/Users/forss/Documents/Python/test.py",
+		"/C/Users/forss/Documents/Python/BGLogger.py",
+		"/C/Users/forss/Documents/Python/cmd_file_organizer.py",
+		"/C/Users/forss/Documents/BreadProject/SerialLogger_Pi 1.2/serialLogger_Pi 1.2.1.py",
+		"/D/sorting.py",
+		"/C/Users/forss/Documents/BreadProject/SerialLogger_Pi 1.2/file_organizer",
+		"/C/Users/forss/Documents/Python/Game.py",
+		"/C/Users/forss/Documents/BreadProject/SerialLogger_Win 1.2/serialLogger_Win 1.2.1.py",
+		"/C/Users/forss/Documents/BreadProject/SerialLogger_Win 1.2/logs/uniqueMACLog_2019-10-01T17.07.31.bin",
+		"/C/Users/forss/Documents/BreadProject/SerialLogger_Win 1.2/serialLogger_Win 1.2.py",
+		"/C/Users/forss/Documents/BreadProject/SerialLogger/test.py",
+		"/C/Users/forss/Documents/BreadProject/PythonScripts/blackList.txt",
+		"/C/Users/forss/Documents/BreadProject/PythonScripts/test.py",
+		"/C/Users/forss/Documents/BreadProject/PythonScripts/serialLogger.py",
+		"/C/Users/forss/Documents/BreadProject/PythonScripts/blackList.bin",
+		"/C/Users/forss/Documents/BreadProject/PythonScripts/uniqueMACLog_2019-09-20T19.51.30.bin",
+		"/C/Users/forss/Documents/BreadProject/PythonScripts/uniqueMACLog_2019-09-20T19.23.30.bin",
+		"/C/Users/forss/Documents/BreadProject/PythonScripts/uniqueMACLog_2019-09-20T19.17.37.bin",
+		"/C/Users/forss/Documents/BreadProject/PythonScripts/uniqueMACLog_2019-09-20T19.16.05.bin",
+		"/C/Users/forss/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/forss/Documents/BreadProject/PythonScripts/uniqueMACLog_2019-09-19T19.38.34.bin",
+		"/C/Users/forss/Documents/BreadProject/PythonScripts/uniqueMACLog_2019-09-19T19.29.53.bin",
+		"/C/Users/forss/Documents/BreadProject/PythonScripts/uniqueMACLog_2019-09-19T19.11.31.bin",
+		"/C/Users/forss/Documents/BreadProject/PythonScripts/uniqueMACLog_2019-09-19T19.06.39.bin",
+		"/C/Users/forss/Documents/BreadProject/PythonScripts/uniqueMACLog_2019-09-19T18.46.32.bin",
+		"/C/Users/forss/Documents/BreadProject/PythonScripts/serial_logger.py",
+		"/C/Users/forss/Documents/Bröd-Projekt/PythonScripts/serial_logger.py",
+		"/C/Users/forss/Documents/nils",
+		"/C/Users/forss/Documents/hejha.py",
+		"/C/Users/forss/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/forss/Documents/test.py",
+		"/C/Users/forss/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"print"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Application/Pages/SettingsPage.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10544,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6621,
+								6621
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2896.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Application/Pages/GraphPage.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6810,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								402,
+								402
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Application/config.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 372,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1,
+								1
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Application/defaultConfig.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 262,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								197,
+								197
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 4,
+					"file": "Application/Root.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3360,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								255,
+								255
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "Application/Utilities/BGLogger.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2864,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								713,
+								713
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 336.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "Application/Utilities/Graph.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2377,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 336.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": ".gitignore",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 226,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								50,
+								50
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Git Formats/Git Ignore.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 8,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 173,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								173,
+								173
+							]
+						],
+						"settings":
+						{
+							"default_dir": "C:\\Users\\forss\\Documents\\Python\\Logger\\Application",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"default_dir": "C:\\Users\\forss\\Documents\\Python\\Logger\\Application",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 263,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								263,
+								263
+							]
+						],
+						"settings":
+						{
+							"default_dir": "C:\\Users\\forss\\Documents\\Python\\Logger\\Application",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 37.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				2
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			],
+			[
+				1,
+				1,
+				2,
+				2
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.592128279884,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			0.5,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 114.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/User/python3.sublime-build",
+	"project": "Sublime.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 1,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 205.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

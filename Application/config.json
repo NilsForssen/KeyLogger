@@ -1,0 +1,22 @@
+{
+    "destinationDir": "C:\\Users\\forss\\Documents\\Python\\Logger\\Application",
+    "winX": 800,
+    "winY": 600,
+    "offsetX": 40,
+    "offsetY": 40,
+    "blackList": [
+        "A",
+        "D",
+        "F",
+        "A",
+        "S",
+        "D",
+        "F"
+    ],
+    "whiteList": [],
+    "imageFormats": [
+        "png",
+        "pdf"
+    ],
+    "imageDPI": 100
+}
