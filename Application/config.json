@@ -6,12 +6,7 @@
     "offsetY": 40,
     "blackList": [
         "A",
-        "D",
-        "F",
-        "A",
-        "S",
-        "D",
-        "F"
+        "D"
     ],
     "whiteList": [],
     "imageFormats": [

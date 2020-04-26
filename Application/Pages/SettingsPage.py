@@ -13,7 +13,7 @@ class SettingsPage(tk.Frame):
     def createWidgets(self):
 
         self.saveButton = tk.Button(self,
-            text="s",
+            text="Save Settings",
             background="green2", 
             activebackground="green2",
             command=self.saveSettings)
@@ -110,7 +110,7 @@ class SettingsPage(tk.Frame):
                 else:
                     print("{0} is not a valid character".format(char))
 
-            var1.set("".join(added))
+            headVar.set("".join(added))
 
 
         def addToBlackList(*args):
