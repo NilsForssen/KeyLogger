@@ -1,17 +1,13 @@
 {
-    "destinationDir": "C:\\Users\\forss\\Documents\\Python\\Logger\\Application",
+    "destinationDir": "C:\\Users\\forss\\Documents\\Python\\KeyLogger\\src\\dist",
     "winX": 800,
     "winY": 600,
     "offsetX": 40,
     "offsetY": 40,
-    "blackList": [
-        "A",
-        "D"
-    ],
+    "blackList": [],
     "whiteList": [],
     "imageFormats": [
-        "png",
-        "pdf"
+        "png"
     ],
     "imageDPI": 100
 }
